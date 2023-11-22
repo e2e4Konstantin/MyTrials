@@ -1,0 +1,8 @@
+name,age,state,point,other,price
+Alice ,24,NY,,,45.1
+,,TX,,,33.333
+Charlie,,CA,,,15.0
+Dave ,68,TX,70,,12.3
+ Dave,68,TX,70,tax,177.151
+Ellen,,CA,88,,55.0
+Frank,30,NY,,,78.0
