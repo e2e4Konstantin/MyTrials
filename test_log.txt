@@ -1,0 +1,2 @@
+__main__.PerformanceTest.test_million_appends 0.10951349999231752
+__main__.PerformanceTest.test_sum_of_numbers 0.03423210000619292
