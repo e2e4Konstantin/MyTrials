@@ -12,7 +12,7 @@ if __name__ == "__main__":
     with pikepdf.open(file_name) as pdf:
         print(len(pdf.pages))
         pdf = pikepdf.open(file_name, allow_overwriting_input=True)
-        del pdf.pages[45:]  # Remove pages 2-3 labeled "second page" and "third page"
+        del pdf.pages[45:]
         print(len(pdf.pages))
 
         pdf.save(os.path.join(directory_path, 'output.pdf'))

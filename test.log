@@ -1,0 +1,3 @@
+DEBUG | module_logger.child_logger | Hello guy!
+module_logger.submodule_logger || DEBUG || Hello! || mod_7_3.main:22
+module_logger.submodule_logger || DEBUG || Hello! || mod_7_3.main:22

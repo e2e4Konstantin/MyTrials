@@ -10,4 +10,9 @@ class Employee(NamedTuple):
     id: int = 3
 
     def __repr__(self) -> str:
-        return f'<Employee {self.name}, id={self.id}>'
+        return f'<Employee: {self.name!r}, id={self.id}>'
+
+
+x = Employee('Bob', 5)
+print(x)
+print(x.name)
