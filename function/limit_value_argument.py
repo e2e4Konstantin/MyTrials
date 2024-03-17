@@ -15,8 +15,8 @@ def func(a, b, c, **kw):
         # Do Solar
     if kw.get('do_view'):
         # Do view
-        
-        
+
+
 def func(a, b, c, *args):
     for arg in args:
         arg(a, b, c)
@@ -26,7 +26,7 @@ def foosim(a, b, c):
 
 def barsim(a, b, c):
     print 'barsim %d' % (a * b * c)
-    
+
 
 
 def example_function(a, b, c, op='add'):
@@ -34,4 +34,4 @@ def example_function(a, b, c, op='add'):
 
 
 example_function(0, 1, 2, 'add') # returns 3
-example_function(0, 1, 2, 'multiply') # returns 0    
+example_function(0, 1, 2, 'multiply') # returns 0
