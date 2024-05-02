@@ -267,3 +267,23 @@ B
 !!!!!!!!!! https://realpython.com/python-super/
 
 
+class BaseContextManager:
+    def __enter__(self):
+        print("Entering BaseContextManager")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting BaseContextManager")
+
+
+class ChildContextManager(BaseContextManager):
+    def __enter__(self):
+        super().__enter__()
+        print("Entering ChildContextManager")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting ChildContextManager")
+        super().__exit__(exc_type, exc_value, traceback)
+
+
+with ChildContextManager() as cm:
+    print("Inside context")
