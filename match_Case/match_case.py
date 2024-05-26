@@ -3,11 +3,11 @@
     # case 1:
         # print('1')
     # case 5:
-        # print('5')    
+        # print('5')
     # case _:
-        # print('***')    
-        
-        
+        # print('***')
+
+
 # day = "Monday"
 # switch day {
   # case "Sunday"   : print("Take it easy")
@@ -17,8 +17,8 @@
   # case "Thursday" : print("Presentations")
   # case "Friday"   : print("Interviews and party")
   # case "Saturday" : print("Time to do sports")}
-  
-  
+
+
   # match day:
     # case "Sunday"    : print("Take it easy")
     # case "Monday"    : print("Go to work")
@@ -34,7 +34,7 @@
             # print("Hello there")
         # # Store name into some_name if it is not None
         # case some_name:
-            # print(f"Hello {some_name}")    
+            # print(f"Hello {some_name}")
 #
 #
 # match numbers:
@@ -83,5 +83,12 @@ match name:
         # Store name into some_name if it is not None
         case some_name if len(some_name) == 4:
             print(f"Hello {some_name}")
+        case _:
+            print('непонятно')
+
+name = "Jack"
+match name:
+        case name_ if len(name_) == 4:
+            print(f"Hello {name_}")
         case _:
             print('непонятно')

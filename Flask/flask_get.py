@@ -64,20 +64,51 @@ def sum_json():
 class RegistrationForm(FlaskForm):
     email = StringField(validators=[InputRequired(), Email()])
     phone = IntegerField(validators=[InputRequired(), NumberRange(min=100_00_00_000, max=999_99_99_999)])
-    name = StringField()
+    name = StringField(validators=[InputRequired()])
+
+    def validate_email(self, email: Optional[str]) -> None:
+        if email is None:
+            raise ValueError("email is None")
+
+    def validate_phone(self, phone: Optional[int]) -> None:
+        if phone is None:
+            raise ValueError("phone is None")
 
 
 @app.route("/registration", methods=["POST"])
 def registration():
     form = RegistrationForm()
-    if form.validate_on_submit():
-        email, phone, name = form.email.data, form.phone.data, form.name.data
-        return f"--> {email, phone, name}"
-    # return "form error:", 400
+    if not form.is_submitted():
+        return "form is not submitted", 400
+    if not form.validate():
+        return "form is not valid", 400
+    email = form.email.data
+    phone = form.phone.data
+    name = form.name.data
+    if email is None or phone is None or name is None:
+        return "null pointer references", 500
+    return f"--> {email}, {phone}, {name}"
 
 
 
 
-if __name__ == '__main__':
+
+
+
+def run_flask_app(debug: bool = True, **kwargs: Any) -> Flask:
+    """
+    Run the flask app.
+
+    Args:
+        debug: If True, flask will run in debug mode.
+        kwargs: Keyword arguments to pass to Flask.run
+
+    Returns:
+        The app that was run
+    """
     app.config["WTF_CSRF_ENABLED"] = False
-    app.run(debug=True)
+    return app.run(debug=debug, **kwargs)
+
+
+if __name__ == "__main__":
+    run_flask_app(debug=True)
