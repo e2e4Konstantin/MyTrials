@@ -10,3 +10,5 @@ with duckdb.connect("file.db") as con:
     con.sql(read_query)
     # con.sql('ALTER TABLE tblPrices ALTER "202" TYPE INTEGER;')
     con.table("tblPrices").show()
+
+
