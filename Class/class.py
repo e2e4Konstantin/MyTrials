@@ -185,58 +185,58 @@
 
 # https://www.datacamp.com/tutorial/super-multiple-inheritance-diamond-problem
 
-class Class_A:
-    def __init__(self, name=None):
-        self.name = name
-        print(f"Class_A = {self.name}, {self.__class__}")
+# class Class_A:
+#     def __init__(self, name=None):
+#         self.name = name
+#         print(f"Class_A = {self.name}, {self.__class__}")
 
 
-class Class_B(Class_A):
-    def __init__(self, param1='hello', **kwargs):
-        super().__init__(**kwargs)
-        self.param1 = param1
-        print(f"--Class_B = {self.param1}, {self.__class__}")
+# class Class_B(Class_A):
+#     def __init__(self, param1='hello', **kwargs):
+#         super().__init__(**kwargs)
+#         self.param1 = param1
+#         print(f"--Class_B = {self.param1}, {self.__class__}")
 
 
-class Class_C(Class_A):
-    def __init__(self, param2='bye', **kwargs):
-        super().__init__(**kwargs)
-        self.param2 = param2
-        print(f"--Class_C = {self.param2}, {self.__class__}")
+# class Class_C(Class_A):
+#     def __init__(self, param2='bye', **kwargs):
+#         super().__init__(**kwargs)
+#         self.param2 = param2
+#         print(f"--Class_C = {self.param2}, {self.__class__}")
 
 
-class Class_D(Class_B, Class_C):
-    def __init__(self, works='fine', **kwargs):
-        super().__init__(**kwargs)
-        print(f"{works=}, {self.param1=}, {self.param2=}, {self.name=}")
+# class Class_D(Class_B, Class_C):
+#     def __init__(self, works='fine', **kwargs):
+#         super().__init__(**kwargs)
+#         print(f"{works=}, {self.param1=}, {self.param2=}, {self.name=}")
 
 
-print()
-d = Class_D(name='Testing')
-print(Class_D.mro())
+# print()
+# d = Class_D(name='Testing')
+# print(Class_D.mro())
 
 
 
-class AMix:
-    def __init__(self, a, **kwargs):
-        super().__init__(**kwargs)
-        self.a = a
+# class AMix:
+#     def __init__(self, a, **kwargs):
+#         super().__init__(**kwargs)
+#         self.a = a
 
 
-class BMix:
-    def __init__(self, b, **kwargs):
-        super().__init__(**kwargs)
-        self.b = b
+# class BMix:
+#     def __init__(self, b, **kwargs):
+#         super().__init__(**kwargs)
+#         self.b = b
 
 
-class AB(AMix, BMix):
-    def __init__(self, a, b):
-        super().__init__(a=a, b=b)
+# class AB(AMix, BMix):
+#     def __init__(self, a, b):
+#         super().__init__(a=a, b=b)
 
 
-ab = AB('a1', 'b2')
+# ab = AB('a1', 'b2')
 
-print(ab.a, ab.b)  # -> a1 b2
+# print(ab.a, ab.b)  # -> a1 b2
 
 class A:
     def __init__(self, a):
@@ -260,4 +260,5 @@ class D(B, C):
         self.d = dd
 
 d = D(1, 2, 3, 4)
+print(d.__class__.mro())
 print(d.a)
