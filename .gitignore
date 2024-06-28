@@ -1,6 +1,7 @@
 **/.idea
 **/.tmp
 **/venv
+**/.venv
 **/__pycache__
 **.vscode
 **/output
