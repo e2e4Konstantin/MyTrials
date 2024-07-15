@@ -14,3 +14,9 @@ print(r) # the Levenshtein distance is still 1
 # ... but deletion + insertion may also match other, non-substitution differences
 r=find_near_matches('PATTERN', '---PATERRN---', max_deletions=1, max_insertions=1, max_substitutions=0)
 print(r)
+
+
+ls = "РазделII. Стоимостные показатели по объектам"
+qs = "Раздел"
+r=find_near_matches(qs, ls, max_deletions=1, max_insertions=1, max_substitutions=0)
+print(r)

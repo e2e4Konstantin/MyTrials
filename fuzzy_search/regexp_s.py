@@ -18,11 +18,14 @@ fuzzy_pattern = f'({pattern})' + '{s<=3,i<=3,d<=3}'
 match = regex.search(fuzzy_pattern, text, regex.BESTMATCH)
 print(match)
 
-ls = "Раздел II. Стоимостные показатели по объектам РазделII Разделы"
+ls = "Раздел II. Стоимостные показатели по объектам"
 qs = "Раздел"
 
 match = regex.search("Раздел{e<1}", ls, regex.BESTMATCH)
 print(match)
 
-match = regex.findall("Раздел{e<1}", ls, regex.BESTMATCH)
+match = regex.findall("Раздел", ls, regex.BESTMATCH)
+print(match)
+
+match = regex.findall("Раздел{e<2}", ls)
 print(match)
