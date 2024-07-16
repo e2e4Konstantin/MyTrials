@@ -18,4 +18,5 @@ print (list(matches(large_string, query_string, 0.8)))
 
 ls = "Раздел II. Стоимостные показатели по объектам РазделII Разделы"
 qs = "Раздел"
+
 print (list(matches(ls, qs, 0.8)))
