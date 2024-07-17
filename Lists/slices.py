@@ -13,3 +13,8 @@ print(text[rev], text[f_five])
 
 l = ['#'] * 10
 print(l)
+
+l2 = [1, 23.5, 77, 56 ]
+
+print(l2[0:])  
+print(l2[1:])  
