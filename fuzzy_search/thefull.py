@@ -1,3 +1,5 @@
+# https://www.markiiisys.com/blog/phrase-comparison-in-python/
+
 from thefuzz import fuzz
 name = "Kurtis Pykes"
 full_name = "Kurtis K D Pykes"
