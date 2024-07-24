@@ -1,3 +1,5 @@
+
+# pip install nltk
 from difflib import SequenceMatcher
 from nltk.util import ngrams
 import codecs
@@ -40,16 +42,19 @@ def find_closest_phrase_match(target_phrase: str, text: str) -> tuple[float, str
 
     return max_similarity, closest_match
 
-needle = "Основные технико-экономические показатели"
-hay    = "Основные технико-экономические показатели объекта"
+# needle = "Основные технико-экономические показатели"
+# hay    = "Основные технико-экономические показатели объекта"
 
-r = find_closest_phrase_match(needle, hay)
-print(r)
+# r = find_closest_phrase_match(needle, hay)
+# print(r)
 
 
 needle = "this is the string we want to find"
 hay    = "text text lots of text and more and more this string is the one we wanted to find and here is some more and even more still"
 
-r = find_closest_phrase_match(needle, hay)
+text    = "1 м2 общей площади квартир"
+target  = 'на 1 м2 общей площади квартир' 
+
+r = find_closest_phrase_match(target, text)
 print(r)
 

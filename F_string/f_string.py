@@ -12,22 +12,22 @@ x = f"{n:.2%}".replace('.', ',' )
 print(x)
 
 
-# print('==>\n')
-# name = "Ivan"
-# print(f"{name} | {name:<10} | {name:>10}:")
-# print(f"|{name:^10}|")
-# print(f"|{name:#^20}|{name:_^20}")
-# alignment = '^'
-# print(f"|{name:{alignment}10}|")
+print('==>\n')
+name = "Ivan"
+print(f"{name} | {name:<10} | {name:>10}:")
+print(f"|{name:^10}|")
+print(f"|{name:#^20}|{name:_^20}")
+alignment = '^'
+print(f"|{name:{alignment}10}|")
 
 
-# print(f"-{name:*<10}")
-# print(f"Hello {name=}")
-# print(f"Hello {name.upper()=}")
+print(f"-{name:*<10}")
+print(f"Hello {name=}")
+print(f"Hello {name.upper()=}")
 
-# s = " Now, do you know about the formatting mini-language?"
-# print(f"{s:<10.10}  -- {s:<10}")
-# print(f"{s:>10.10}  -- {s:>10}")
+s = " Now, do you know about the formatting mini-language?"
+print(f"{s:<10.10}  -- {s:<10}")
+print(f"{s:>10.10}  -- {s:>10}")
 
 
 # x = 1234567890
@@ -112,7 +112,7 @@ print(x)
 # # n = 15
 # # print(f'{"=" * n}')
 # # print(f"{'':->40} ")
-# # print(f"{'-' * 40}")
+print(f"{'-' * 40}")
 
 # # num_doors = 5
 # # print(f"Shut the door{'s' if num_doors > 1 else ''}.")

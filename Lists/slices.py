@@ -17,5 +17,5 @@ print(l)
 l2 = [1, 23.5, 77, 56 ]
 
 print(l2[0:])  
-print(l2[1:])  
+print(l2[1:])
 print(l2[2:3])  
