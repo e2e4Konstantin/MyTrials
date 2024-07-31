@@ -4,10 +4,17 @@
 # sys.path.append("C:\\_path_to_virtual_environment\\Lib\\site-packages\\")
 # https://learn.microsoft.com/ru-ru/office/vba/api/word.wdviewtype
 # https://learn.microsoft.com/en-us/dotnet/api/microsoft.office.interop.word?view=word-pia
+# https://github.com/luxiao/python/blob/master/aia/work/easyword.py
+# http://www.icodeguru.com/webserver/Python-Programming-on-Win32/ch10.htm
 import os
 import win32com.client
-from win32com.client import constants
+from win32com.client import constants as win32consts
+# from win32com import pythoncom
 from pathlib import WindowsPath
+
+
+
+
 
 # wdNormalView = constants.wdNormalView
 
@@ -31,10 +38,28 @@ print(out_file)
 # word = win32com.client.Dispatch('Word.Application')
 word = win32com.client.gencache.EnsureDispatch('Word.Application')
 
-word.Visible = False
+word.Visible = True
 doc = word.Documents.Open(file_path, Visible=False)
-for field in doc.Fields:
-    print(field)
+# константы доступны только после создания объекта
+# print(win32consts.__dir__()) # 
+# print(win32consts.__dict__)
+# print(win32consts.wdIndent)
+
+# print(word.ListCommands(1))
+print(doc.Tables.Count)
+
+# for field in doc.Fields:
+#     print(field)
+inlineShapes = doc.InlineShapes
+for shape in inlineShapes:
+  print(shape.Type)
+  if shape.Type in [
+      win32consts.wdInlineShapeEmbeddedOLEObject, 
+      win32consts.wdInlineShapeLinkedOLEObject, 
+      win32consts.wdInlineShapeOLEControlObject]:
+    print(True)
+print(False)
+
 
 doc.Top = 1
 doc.Content.Text = "hello world"
@@ -76,3 +101,18 @@ doc.Content.InsertAfter("hello4 hello5")
 
 doc.Close()
 word.Quit()
+
+
+# def OpenExcelSheet(filename):
+#     try:
+#         xl = Dispatch("Excel.Application")
+#         xl.Workbooks.Open(filename)
+#     except pythoncom.com_error, (hr, msg, exc, arg):
+#         print "The Excel call failed with code %d: %s" % (hr, msg)
+#         if exc is None:
+#             print "There is no extended error information"
+#         else:
+#             wcode, source, text, helpFile, helpId, scode = exc
+#             print "The source of the error is", source
+#             print "The error message is", text
+#             print "More info can be found in %s (id=%d)" % (helpFile, helpId)
